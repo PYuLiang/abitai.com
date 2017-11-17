@@ -1,0 +1,123 @@
+@screen-xs-max: 768px;
+@color-defult-white: rgba(255, 255, 255, .8);
+@color-defult-blue: skyblue;
+@color-trans-black: rgba(0, 0, 0, .5);
+@font-size-min: 12px;
+@height-top-nav: 68px;
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+    background-image: url(./../../img/origin.jpg);
+    background-size: 100%;
+}
+
+@media (max-width: @screen-xs-max) {
+    .g-hd {
+        height: 60px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+    .g-bd {
+        overflow: hidden;
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: @screen-xs-max) {
+    .g-hd {
+        height: @height-top-nav;
+        width: 100%;
+        background-color: @color-trans-black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        ul {
+            color: @color-defult-white;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            li {
+                display: inline-block;
+                height: @height-top-nav;
+                line-height: @height-top-nav;
+                font-size: @font-size-min;
+                cursor: pointer;
+                a {
+                    color: @color-defult-white;
+                    text-decoration-line: none;
+                }
+            }
+        }
+    }
+    .g-bd.container-fluid {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        .box {
+            padding: 0;
+            margin: 0;
+        }
+        #product {
+            .top-placeholder {
+                height: @height-top-nav;
+            }
+            .content-hd {
+                height: 490px;
+                background-color: @color-trans-black;
+                h1 {
+                    font-size: 45px;
+                    color: @color-defult-white;
+                    padding: 0;
+                    margin: 0;
+                    text-align: center;
+                    padding-top: 11%;
+                }
+                span {
+                    display: block;
+                    font-size: 18px;
+                    color: @color-defult-white;
+                    padding: 0;
+                    margin: 0;
+                    text-align: center;
+                    margin-top: 25px;
+                }
+            }
+            .content-bd {
+                .scene {
+                    h3 {
+                        text-align: center;
+                        font-size: 23px;
+                        margin-top: 65px;
+                    }
+                    .blue-line {
+                        margin-top: 38px;
+                        margin-left: 48%;
+                        display: block;
+                        width: 50px;
+                        height: 5px;
+                        background-color: @color-defult-blue;
+                    }
+                }
+            }
+        }
+        #team {
+            padding-top: @height-top-nav;
+        }
+        #touch-ai {
+            padding-top: @height-top-nav;
+        }
+        #media {
+            padding-top: @height-top-nav;
+        }
+        #connection {
+            padding-top: @height-top-nav;
+        }
+    }
+}
